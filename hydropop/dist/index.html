@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HydroPop</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydroPop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Overpass', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #a0e7e5, #b4f8c8);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Burbujitas de colores */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: rise linear infinite;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    article.hydropop-container {
+      max-width: 700px;
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    article.hydropop-container h1 {
+      color: #A3CEF1; /* Azul pastel */
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    article.hydropop-container p {
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #ff69b4;
+      color: #fff;
+      font-weight: 600;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+
+    .buy-button:hover {
+      transform: scale(1.1);
+      background: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+  <article class="hydropop-container">
+    <h1>HydroPop</h1>
+    <p>HydroPop son gomitas únicas en bolsita, diseñadas para hidratarte de manera divertida y deliciosa. Cada gomita está hecha con ingredientes que ayudan a mantener tu cuerpo fresco y activo, dándote energía y sabor en cada mordida. Son perfectas para disfrutar en cualquier momento del día: en la escuela, en el trabajo o durante tus actividades favoritas. Con HydroPop, la hidratación deja de ser aburrida y se convierte en un momento dulce y refrescante que te hace sonreír mientras cuidas de ti. ¡Pequeñas, prácticas y llenas de sabor, las gomitas HydroPop son la forma más divertida de mantenerte hidratado!</p>
+    <a href="#" class="buy-button">¡Compra ya!</a>
+  </article>
+
+  <script>
+    const colors = ['#FF69B4', '#FFD700', '#7CFC00', '#1E90FF', '#FF4500', '#BA55D3'];
+    const body = document.body;
+
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+
+      // tamaño aleatorio
+      const size = Math.random() * 25 + 15 + 'px';
+      bubble.style.width = size;
+      bubble.style.height = size;
+
+      // posición horizontal aleatoria
+      bubble.style.left = Math.random() * 100 + '%';
+
+      // posición vertical inicial aleatoria cerca del fondo
+      bubble.style.bottom = (Math.random() * 50) + 'px';
+
+      // color aleatorio
+      bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+      // velocidad de animación aleatoria
+      bubble.style.animationDuration = (Math.random() * 5 + 8) + 's';
+
+      body.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
